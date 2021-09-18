@@ -136,7 +136,11 @@ public class ImageHeaderParser {
             }
 
             if (hasJpegExifPreamble) {
-                return parseExifSegment(new RandomAccessReader(exifData));
+                try {
+                    return parseExifSegment(new RandomAccessReader(exifData));
+                } catch (java.lang.Exception e) {
+                    return -1;
+                }
             } else {
                 return -1;
             }
