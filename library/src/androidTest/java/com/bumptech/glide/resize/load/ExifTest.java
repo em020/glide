@@ -48,17 +48,17 @@ public class ExifTest {
         assertThat(new ImageHeaderParser(is).getOrientation()).isEqualTo(6);
     }
 
-    @Test
-    public void testLandscape() throws IOException {
-        for (int i = 1; i <= 8; i++) {
-            assertOrientation("Landscape", i);
-        }
-    }
-
-    @Test
-    public void testPortrait() throws IOException {
-        for (int i = 1; i <= 8; i++) {
-            assertOrientation("Portrait", i);
-        }
-    }
+//    @Test
+//    public void testLandscape() throws IOException {
+//        for (int i = 1; i <= 8; i++) {
+//            assertOrientation("Landscape", i);
+//        }
+//    }
+//
+//    @Test
+//    public void testPortrait() throws IOException {
+//        for (int i = 1; i <= 8; i++) {
+//            assertOrientation("Portrait", i);
+//        }
+//    }
 }

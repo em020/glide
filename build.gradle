@@ -15,25 +15,25 @@ subprojects { project ->
         jcenter()
     }
 
-    apply plugin: 'checkstyle'
+//    apply plugin: 'checkstyle'
 
-    checkstyle {
-        configFile = new File(rootDir, 'checkstyle.xml')
-        configProperties.checkStyleConfigDir = rootProject.rootDir
-    }
+//    checkstyle {
+//        configFile = new File(rootDir, 'checkstyle.xml')
+//        configProperties.checkStyleConfigDir = rootProject.rootDir
+//    }
 
-    task checkstyle(type: Checkstyle) {
-        source 'src'
-        include '**/*.java'
-        exclude '**/gen/**'
-
-        // empty classpath
-        classpath = files()
-    }
+//    task checkstyle(type: Checkstyle) {
+//        source 'src'
+//        include '**/*.java'
+//        exclude '**/gen/**'
+//
+//        // empty classpath
+//        classpath = files()
+//    }
 
     afterEvaluate {
         if (project.tasks.findByName('check')) {
-            check.dependsOn('checkstyle')
+//            check.dependsOn('checkstyle')
         }
     }
 

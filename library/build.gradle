@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 apply plugin: 'robolectric'
 apply plugin: 'maven'
-apply plugin: 'findbugs'
+//apply plugin: 'findbugs'
 apply plugin: 'pmd'
 apply plugin: 'jacoco'
 apply plugin: 'com.github.kt3k.coveralls'
 
-findbugs {
-    toolVersion = "2.0.3"
-}
+//findbugs {
+//    toolVersion = "2.0.3"
+//}
 jacoco {
     toolVersion = "0.7.1.201405082137"
 }
@@ -52,30 +52,30 @@ android {
 }
 
 afterEvaluate {
-    task findbugs(type: FindBugs, dependsOn: assembleDebug) {
-
-        description 'Run findbugs'
-        group 'verification'
-
-        classes = fileTree('build/intermediates/classes/debug/')
-        source = fileTree('src/main/java')
-        classpath = project.configurations.compile
-
-        effort = 'max'
-
-        excludeFilter = file("findbugs-exclude.xml")
-
-        reports {
-            xml.enabled = false
-            html.enabled = true
-        }
-    }
-
-    findbugsTestDebug {
-        enabled = false
-    }
-
-    check.dependsOn('findbugs')
+//    task findbugs(type: FindBugs, dependsOn: assembleDebug) {
+//
+//        description 'Run findbugs'
+//        group 'verification'
+//
+//        classes = fileTree('build/intermediates/classes/debug/')
+//        source = fileTree('src/main/java')
+//        classpath = project.configurations.compile
+//
+//        effort = 'max'
+//
+//        excludeFilter = file("findbugs-exclude.xml")
+//
+//        reports {
+//            xml.enabled = false
+//            html.enabled = true
+//        }
+//    }
+//
+//    findbugsTestDebug {
+//        enabled = false
+//    }
+//
+//    check.dependsOn('findbugs')
 
     task pmd(type: Pmd) {
 
